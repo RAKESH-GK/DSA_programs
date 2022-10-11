@@ -3,11 +3,11 @@
 
 void main(){
     int table[128],flag=0,k;
-    char t[100]="im in barber shop",p[20]="shop";
-    // printf("enter the text:");
-    // gets(t);
-    // printf("enter the pattern:");
-    // gets(p);
+    char t[100],p[20];
+    printf("enter the text:");
+    gets(t);
+    printf("enter the pattern:");
+    gets(p);
     int n=strlen(t);
     int m=strlen(p);
     for(int i=0;i<128;i++){
