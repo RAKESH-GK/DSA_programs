@@ -26,9 +26,9 @@ void main(){
     for(int i=2;i<n;i++){
         int mini=999;
         for(int j=1;j<=n;j++){
-            if(visited[i]==0 && dist[i]<mini){
-                mini=dist[i];
-                u=i;
+            if(visited[j]==0 && dist[j]<mini){
+                mini=dist[j];
+                u=j;
             }
             visited[u]=1;
             for(int j=1;j<=n;j++){
