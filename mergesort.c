@@ -60,6 +60,5 @@ void main(){
         printf("\ntime taken is %f ",time/CLK_TCK);
         printf("\nwant to run again(1/0):");
         scanf("%d",&ch);
-    }
-   
+    }  
 }

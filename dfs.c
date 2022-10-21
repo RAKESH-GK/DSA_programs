@@ -1,14 +1,7 @@
 #include<stdio.h>
 #include<stdlib.h>
 
-void dfs(int n,int cost[20][20],int j,int s[]){
-    s[j]=1;
-    for(int i=0;i<n;i++){
-        if(cost[j][i]==1 && s[i]==0){
-            dfs(n,cost,i,s);
-        }
-    }
-}
+void dfs(int,int[20][20],int,int[]);
 
 void main(){
     int n,cost[20][20],s[10];
@@ -22,7 +15,7 @@ void main(){
     }
     for(int i=0;i<n;i++){
         for(int j=0;j<n;j++){
-            s[i]=0;
+            s[j]=0;
         }
         dfs(n,cost,i,s);
         for(int i=0;i<n;i++){
@@ -33,4 +26,13 @@ void main(){
         }
     }
     printf("graph is connected..!");
+}
+
+void dfs(int n,int cost[20][20],int j,int s[]){
+    s[j]=1;
+    for(int i=0;i<n;i++){
+        if(cost[j][i]==1 && s[i]==0){
+            dfs(n,cost,i,s);
+        }
+    }
 }

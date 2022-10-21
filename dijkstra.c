@@ -1,14 +1,11 @@
 #include<stdio.h>
-int min(int a,int b){
-    return a<b?a:b;
-}
 void main(){
-    int n,cost[10][10],source,visited[10],dist[10],u;
-    printf("enter the number of nodes:");
+    int cost[20][20],n,source,visited[20],dist[20],min,u;
+    printf("enter the number of vertices:");
     scanf("%d",&n);
-    printf("enter the cost of edges:\n");
+    printf("enter the cost matrix:\n");
     for(int i=1;i<=n;i++){
-        for(int j=0;j<=n;j++){
+        for(int j=1;j<=n;j++){
             scanf("%d",&cost[i][j]);
             if(cost[i][j]==0){
                 cost[i][j]=999;
@@ -23,22 +20,22 @@ void main(){
     }
     visited[source]=1;
     dist[source]=0;
-    for(int i=2;i<n;i++){
-        int mini=999;
+    for(int i=1;i<n;i++){
+        min=999;
         for(int j=1;j<=n;j++){
-            if(visited[j]==0 && dist[j]<mini){
-                mini=dist[j];
+            if(visited[j]==0 && dist[j]<min){
+                min=dist[j];
                 u=j;
             }
-            visited[u]=1;
-            for(int j=1;j<=n;j++){
-                if(visited[j]==0){
-                    dist[j]=min(dist[j],cost[u][j]);
-                }
+        }
+        visited[u]=1;
+        for(int j=1;j<=n;j++){
+            if(visited[j]==0 && dist[u]+cost[u][j]<dist[j]){
+                dist[j]=dist[u]+cost[u][j];
             }
+           
         }
     }
-    printf("shortest from vertex %d to all vertices are:\n",source);
     for(int i=1;i<=n;i++){
         printf("%d to %d is: %d\n",source,i,dist[i]);
     }

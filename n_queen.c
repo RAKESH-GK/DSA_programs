@@ -1,6 +1,8 @@
 #include<stdio.h>
 #include<math.h>
+
 int x[20],count=1;
+
 int place(int k,int j){
     for(int i=1;i<k;i++){
         if((x[i]==j) || abs(x[i]-j)==abs(i-k)){

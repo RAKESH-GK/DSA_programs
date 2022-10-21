@@ -1,6 +1,5 @@
 #include<stdio.h>
 #include<time.h>
-
 int partition(int a[],int low,int high){
     int pivote=a[low];
     int i=low+1;
@@ -79,11 +78,11 @@ void main(){
         for(int i=0;i<n;i++){
             printf("%d ",a[i]);
         }
-        printf("\ntime taken is %f secs",time/CLK_TCK);
+        double t=time;
+        printf("\ntime taken is %lf secs",t/CLK_TCK);
         break;
     default:printf("invalid input..!\n");
         break;
     }
     }
 }
-
