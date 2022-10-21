@@ -38,12 +38,6 @@ void main(){
         }
     }
     visited[u]=1;
-    t[k][0]=u;
-    t[k][1]=p[u];
-    for(int i=1;i<=1;i++){
-        printf("%d ",p[i]);
-    }
-    printf("%d   \n",cost[u][p[u]]);
     sum=sum+cost[u][p[u]];
     for(int i=1;i<=n;i++){
         if(visited[i]==0 && cost[u][i]<dist[i]){
